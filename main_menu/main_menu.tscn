@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://j87n4lychbt5"]
 
-[ext_resource type="Script" path="res://main_menu/version_label.gd" id="1_5huni"]
+[ext_resource type="Script" uid="uid://bdu71hmht8qs2" path="res://main_menu/version_label.gd" id="1_5huni"]
 [ext_resource type="PackedScene" uid="uid://bdnyglk1i1cxl" path="res://gameplay/gameplay.tscn" id="2_5nvqq"]
-[ext_resource type="Script" path="res://main_menu/menu_options.gd" id="2_gpv3d"]
+[ext_resource type="Script" uid="uid://dg2kc4v1sx32s" path="res://main_menu/menu_options.gd" id="2_gpv3d"]
 [ext_resource type="PackedScene" uid="uid://dpicmplffpula" path="res://settings/settings.tscn" id="3_2osu0"]
 [ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_82nwe"]
 
@@ -59,15 +59,6 @@ Move: WASD | Accept: J | Cancel: K | Pause: P
 Move: Arrow Keys | Accept: Z | Cancel: Z | Pause: Esc
 Gamepads work too!"
 horizontal_alignment = 2
-
-[node name="Instructions" type="Label" parent="."]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 570.0
-offset_right = 365.0
-offset_bottom = 674.0
-text = "INSTRUCTIONS
-Collect all the things!"
 
 [node name="Version" type="Label" parent="."]
 layout_mode = 0
