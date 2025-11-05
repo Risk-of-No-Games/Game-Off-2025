@@ -1,7 +1,7 @@
 extends VFlowContainer
 
-@export var gameplay_scene:PackedScene
 @export var settings_scene:PackedScene
+@export var game_switching_menu:PackedScene
 
 func _ready() -> void:
 	get_children()[0].grab_focus()
@@ -14,6 +14,7 @@ func _on_quit_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_packed(settings_scene)
+	
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_packed(gameplay_scene)
+	get_tree().change_scene_to_packed(game_switching_menu)
