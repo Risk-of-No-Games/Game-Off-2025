@@ -79,7 +79,7 @@ offset_right = 162.0
 offset_bottom = 49.0
 text = "Debug UI enabled"
 
-[node name="MenuOptions" type="VFlowContainer" parent="." node_paths=PackedStringArray("shortcut_context")]
+[node name="MenuOptions" type="VFlowContainer" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -91,7 +91,6 @@ offset_right = 36.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-shortcut_context = NodePath("")
 alignment = 1
 script = ExtResource("2_gpv3d")
 settings_scene = ExtResource("3_2osu0")

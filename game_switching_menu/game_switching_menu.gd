@@ -84,4 +84,4 @@ func _on_close_pressed():
 func _input(event):
 	# Press Escape to close
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		queue_free()
+		get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
