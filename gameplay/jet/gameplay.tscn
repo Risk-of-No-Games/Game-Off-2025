@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgqqduntqv5re"]
+[gd_scene load_steps=10 format=3 uid="uid://bdnyglk1i1cxl"]
 
-[ext_resource type="Script" path="res://gameplay/gameplay.gd" id="1_thqv1"]
+[ext_resource type="Script" uid="uid://cbf05bfykgbar" path="res://gameplay/gameplay.gd" id="1_thqv1"]
 [ext_resource type="Texture2D" uid="uid://bgprycbqd2tbx" path="res://assets/icon.svg" id="2_o7ako"]
-[ext_resource type="Script" path="res://gameplay/character_body_2d.gd" id="3_gvicd"]
+[ext_resource type="Script" uid="uid://bpa5a73e2kmwt" path="res://gameplay/character_body_2d.gd" id="3_gvicd"]
 [ext_resource type="PackedScene" uid="uid://cko02oljhiby" path="res://paused/paused.tscn" id="3_w8wrl"]
 [ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_7kf0b"]
-[ext_resource type="Script" path="res://gameplay/jet.gd" id="6_uk44f"]
-[ext_resource type="Texture2D" path="res://gameplay/Fighter Jet.png" id="7_nimes"]
+[ext_resource type="Script" uid="uid://dgti4u7y3uype" path="res://gameplay/jet.gd" id="6_uk44f"]
+[ext_resource type="Texture2D" uid="uid://cqtqs8dofennp" path="res://gameplay/Fighter Jet.png" id="7_nimes"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gvicd"]
 
