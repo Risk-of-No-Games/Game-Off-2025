@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ophi6ns7co0"]
+
+[ext_resource type="PackedScene" uid="uid://6cys2jjmngvw" path="res://gameplay/crowd_control/Scenes/crowd_manager.tscn" id="1_ljxgv"]
+
+[node name="CrowdControl" type="Node2D"]
+
+[node name="CrowdManager" parent="." instance=ExtResource("1_ljxgv")]
+position = Vector2(0, 0)
+num_rows = 5
