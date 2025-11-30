@@ -1,44 +1,41 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdnyglk1i1cxl"]
+[gd_scene load_steps=19 format=3 uid="uid://bdnyglk1i1cxl"]
 
-[ext_resource type="Script" uid="uid://cbf05bfykgbar" path="res://gameplay/gameplay.gd" id="1_thqv1"]
-[ext_resource type="Texture2D" uid="uid://bgprycbqd2tbx" path="res://assets/icon.svg" id="2_o7ako"]
-[ext_resource type="Script" uid="uid://bpa5a73e2kmwt" path="res://gameplay/character_body_2d.gd" id="3_gvicd"]
+[ext_resource type="Script" uid="uid://cbf05bfykgbar" path="res://gameplay/jet/gameplay.gd" id="1_thqv1"]
 [ext_resource type="PackedScene" uid="uid://cko02oljhiby" path="res://paused/paused.tscn" id="3_w8wrl"]
 [ext_resource type="PackedScene" uid="uid://cee5dna3u27jf" path="res://assets/select_sfx.tscn" id="4_7kf0b"]
-[ext_resource type="Script" uid="uid://dgti4u7y3uype" path="res://gameplay/jet.gd" id="6_uk44f"]
-[ext_resource type="Texture2D" uid="uid://cqtqs8dofennp" path="res://gameplay/Fighter Jet.png" id="7_nimes"]
+[ext_resource type="Script" uid="uid://dgti4u7y3uype" path="res://gameplay/jet/jet.gd" id="6_uk44f"]
+[ext_resource type="Texture2D" uid="uid://8bh3ljje2t0t" path="res://gameplay/jet/Bomb.png" id="7_7vufn"]
+[ext_resource type="Texture2D" uid="uid://cqtqs8dofennp" path="res://gameplay/jet/Fighter Jet.png" id="7_nimes"]
+[ext_resource type="Texture2D" uid="uid://dxqkknvegb7q1" path="res://gameplay/jet/Battleship.png" id="8_7vufn"]
+[ext_resource type="Script" uid="uid://balqp0y0kioy6" path="res://gameplay/jet/bomb.gd" id="8_rdfdx"]
+[ext_resource type="Texture2D" uid="uid://kawxqho454ly" path="res://gameplay/jet/Battleshi enemyp.png" id="9_w7u7d"]
+[ext_resource type="Script" uid="uid://rhwvprx3625" path="res://gameplay/jet/water.gd" id="11_jl1p2"]
+[ext_resource type="Script" uid="uid://iedvif1hybop" path="res://gameplay/jet/splash.gd" id="11_rq83f"]
+[ext_resource type="Script" uid="uid://gbdwywdlctep" path="res://gameplay/jet/shoot.gd" id="12_xws3m"]
+[ext_resource type="PackedScene" uid="uid://b0utpdk5fuuxr" path="res://bullet.tscn" id="13_i8rrd"]
+[ext_resource type="Texture2D" uid="uid://d4bgtlv3eusp1" path="res://gameplay/jet/Ocean-and-Clouds-Free-Pixel-Art-Backgrounds9.png" id="14_rq83f"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gvicd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7pdct"]
-radius = 93.770996
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8rrd"]
+size = Vector2(18, 11)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8rrd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rq83f"]
 
 [node name="Gameplay" type="Node2D"]
 material = SubResource("CanvasItemMaterial_gvicd")
 script = ExtResource("1_thqv1")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(158, 539)
-motion_mode = 1
-script = ExtResource("3_gvicd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(5, 0)
-shape = SubResource("CircleShape2D_7pdct")
-debug_color = Color(0.9749262, 0, 0.42667648, 0.41960785)
-
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(5, -3)
-texture = ExtResource("2_o7ako")
-
 [node name="Stack" type="VFlowContainer" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 933.0
-offset_top = 43.0
-offset_right = 1270.0
-offset_bottom = 468.0
+offset_left = 929.0
+offset_top = 85.0
+offset_right = 1266.0
+offset_bottom = 510.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 
@@ -51,7 +48,7 @@ text = "GAMEPLAY"
 [node name="Instructions" type="Label" parent="Stack"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Intercept the missile!"
+text = "Splash the water to intercept the missile!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -77,10 +74,84 @@ grow_vertical = 1
 [node name="SelectSfx" parent="." instance=ExtResource("4_7kf0b")]
 
 [node name="jet" type="CharacterBody2D" parent="."]
-position = Vector2(201.00775, 154.36105)
+position = Vector2(24.007751, 154.36105)
 
 [node name="Sprite2D" type="Sprite2D" parent="jet"]
-position = Vector2(-0.007753372, 0.63894653)
+position = Vector2(3.992247, -0.36105347)
 scale = Vector2(1.1405644, 1.0831168)
 texture = ExtResource("7_nimes")
 script = ExtResource("6_uk44f")
+
+[node name="bomb" type="CharacterBody2D" parent="."]
+show_behind_parent = true
+position = Vector2(33, 155)
+collision_mask = 8
+
+[node name="RigidBody2D" type="RigidBody2D" parent="bomb" groups=["floatable"]]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("8_rdfdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb/RigidBody2D" groups=["floatable"]]
+scale = Vector2(0.5374894, 0.39992297)
+texture = ExtResource("7_7vufn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb/RigidBody2D"]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_i8rrd")
+
+[node name="Water" type="Node2D" parent="." groups=["water"]]
+position = Vector2(0, 612)
+script = ExtResource("11_jl1p2")
+
+[node name="Area2D" type="Area2D" parent="Water" groups=["water"]]
+position = Vector2(619, 13)
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("11_rq83f")
+circle_radius = 25.0
+rectangle_size = Vector2(128, 1280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2(-1, -11)
+shape = SubResource("CapsuleShape2D_i8rrd")
+
+[node name="Area2D2" type="Area2D" parent="Water"]
+script = ExtResource("11_rq83f")
+circle_radius = 25.0
+rectangle_size = Vector2(128, 1280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D2"]
+position = Vector2(675, 3)
+shape = SubResource("CapsuleShape2D_rq83f")
+
+[node name="Area2D3" type="Area2D" parent="Water"]
+script = ExtResource("11_rq83f")
+circle_radius = 25.0
+rectangle_size = Vector2(128, 1280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D3"]
+position = Vector2(562, 2)
+shape = SubResource("CapsuleShape2D_rq83f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1080, 576.00006)
+scale = Vector2(1.773437, 1.5859376)
+texture = ExtResource("9_w7u7d")
+script = ExtResource("12_xws3m")
+bullet_scene = ExtResource("13_i8rrd")
+shoot_interval = 5.0
+bullet_speed = 200.0
+shoot_direction = Vector2(-1, -0.25)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(137.00003, 572)
+scale = Vector2(1.9140625, 1.6406251)
+texture = ExtResource("8_7vufn")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(686, 331)
+scale = Vector2(0.8688889, 0.83)
+texture = ExtResource("14_rq83f")

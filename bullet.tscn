@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0utpdk5fuuxr"]
+
+[ext_resource type="Script" uid="uid://dihrsfo6sch7w" path="res://bullet2.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://dxd6cx5uosykc" path="res://gameplay/jet/bullet.png" id="2_t4vbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b2rl"]
+size = Vector2(27, 8)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50, 23)
+texture = ExtResource("2_t4vbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 23)
+shape = SubResource("RectangleShape2D_2b2rl")
