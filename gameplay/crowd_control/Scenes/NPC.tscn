@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xmrthddquduu"]
+
+[ext_resource type="Script" uid="uid://d0ga3onmtt38a" path="res://gameplay/crowd_control/Scenes/NPC.gd" id="1_fiq4y"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+animation = &""
+script = ExtResource("1_fiq4y")

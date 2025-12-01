@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3ophi6ns7co0"]
+
+[ext_resource type="Script" uid="uid://b3oo2r3xska30" path="res://gameplay/crowd_control/crowd_control_game.gd" id="1_2ihi5"]
+[ext_resource type="Texture2D" uid="uid://bp1s53bexpjku" path="res://gameplay/crowd_control/Assets/stadium_background.png" id="1_5ake6"]
+[ext_resource type="Script" uid="uid://bytw8qnrvkmu" path="res://gameplay/crowd_control/background.gd" id="2_dggiv"]
+[ext_resource type="Script" uid="uid://chofkdq0s5c7j" path="res://gameplay/crowd_control/WaveGameUI.gd" id="5_5ake6"]
+[ext_resource type="Script" uid="uid://n3aexvbpivg8" path="res://gameplay/crowd_control/Scenes/crowd_manager.gd" id="8_ca265"]
+[ext_resource type="PackedScene" uid="uid://xmrthddquduu" path="res://gameplay/crowd_control/Scenes/NPC.tscn" id="9_o0bn6"]
+
+[node name="CrowdControl" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ake6")
+script = ExtResource("2_dggiv")
+
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("player_crowd_manager")]
+script = ExtResource("1_2ihi5")
+player_crowd_manager = NodePath("../CrowdContainer/FrontRow")
+success_window = 0.1
+
+[node name="WaveGameUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("game_controller")]
+script = ExtResource("5_5ake6")
+game_controller = NodePath("../GameController")
+
+[node name="ScoresLabel" type="Label" parent="WaveGameUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LivesLabel" type="Label" parent="WaveGameUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FeedbackLabel" type="Label" parent="WaveGameUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InstructionLabel" type="Label" parent="WaveGameUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CrowdContainer" type="Node2D" parent="."]
+
+[node name="BackRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 280)
+script = ExtResource("8_ca265")
+crowd_size = 21
+num_rows = null
+spacing = 40.0
+row_spacing = null
+player_index = null
+player_row = null
+wave_speed = null
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.2
+left_section_size = null
+left_gap = null
+center_section_size = null
+right_gap = null
+right_section_size = null
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleBackRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 320)
+script = ExtResource("8_ca265")
+crowd_size = null
+num_rows = null
+spacing = 40.0
+row_spacing = null
+player_index = null
+player_row = null
+wave_speed = null
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.4
+left_section_size = null
+left_gap = null
+center_section_size = null
+right_gap = null
+right_section_size = null
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 360)
+script = ExtResource("8_ca265")
+crowd_size = null
+num_rows = null
+spacing = 40.0
+row_spacing = 40.0
+player_index = null
+player_row = null
+wave_speed = null
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.6
+left_section_size = null
+left_gap = null
+center_section_size = null
+right_gap = null
+right_section_size = null
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleFrontRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 400)
+script = ExtResource("8_ca265")
+crowd_size = null
+num_rows = null
+spacing = 40.0
+row_spacing = null
+player_index = null
+player_row = null
+wave_speed = null
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.8
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="FrontRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 440)
+script = ExtResource("8_ca265")
+crowd_size = 21
+num_rows = null
+spacing = 40.0
+row_spacing = 0.0
+player_index = 10
+player_row = null
+wave_speed = null
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 2.0
+metadata/_custom_type_script = "uid://n3aexvbpivg8"

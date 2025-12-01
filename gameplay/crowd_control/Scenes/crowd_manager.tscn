@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6cys2jjmngvw"]
+
+[ext_resource type="Script" uid="uid://n3aexvbpivg8" path="res://gameplay/crowd_control/Scenes/crowd_manager.gd" id="1_wgonv"]
+[ext_resource type="PackedScene" uid="uid://xmrthddquduu" path="res://gameplay/crowd_control/Scenes/NPC.tscn" id="2_g8vej"]
+
+[node name="crowd_manager" type="Node2D"]
+position = Vector2(27, 25)
+script = ExtResource("1_wgonv")
+crowd_size = 10
+num_rows = 10
+spacing = 20.0
+row_spacing = 21.0
+player_index = 5
+player_row = 5
+wave_speed = 0.1
+npc_scene = ExtResource("2_g8vej")
