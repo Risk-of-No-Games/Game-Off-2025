@@ -1,0 +1,79 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cugmoet1ln2vs"]
+
+[ext_resource type="Texture2D" uid="uid://b3vjyyawglkb7" path="res://gameplay/crowd_control/Assets/Crowd_member_left_orange.png" id="1_w8bbe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wkly"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2rdf"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5myk"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym5up"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0twg"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nd56"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2rhs"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jqf6"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dfsa"]
+atlas = ExtResource("1_w8bbe")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wkly")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2rdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5myk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym5up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0twg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nd56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2rhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jqf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dfsa")
+}],
+"loop": false,
+"name": &"wave",
+"speed": 8.0
+}]

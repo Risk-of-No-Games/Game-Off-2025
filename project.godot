@@ -23,8 +23,8 @@ Sound="*res://sound.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1024
+window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 
 [input]

@@ -1,0 +1,79 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://ce4s2qbqhc52k"]
+
+[ext_resource type="Texture2D" uid="uid://bfv5nfm061pbo" path="res://gameplay/crowd_control/Assets/Crowd_member_right_blue.png" id="1_w3pgq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpyjt"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8cgf"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14bt"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq4xm"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngcp2"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ida2"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q23dn"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnqcy"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0kcy"]
+atlas = ExtResource("1_w3pgq")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpyjt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8cgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d14bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq4xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngcp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ida2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q23dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnqcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0kcy")
+}],
+"loop": false,
+"name": &"wave",
+"speed": 8.0
+}]

@@ -1,9 +1,103 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3ophi6ns7co0"]
+[gd_scene load_steps=8 format=3 uid="uid://d3ophi6ns7co0"]
 
-[ext_resource type="PackedScene" uid="uid://6cys2jjmngvw" path="res://gameplay/crowd_control/Scenes/crowd_manager.tscn" id="1_ljxgv"]
+[ext_resource type="Script" uid="uid://b3oo2r3xska30" path="res://gameplay/crowd_control/crowd_control_game.gd" id="1_2ihi5"]
+[ext_resource type="Texture2D" uid="uid://bp1s53bexpjku" path="res://gameplay/crowd_control/Assets/stadium_background.png" id="1_5ake6"]
+[ext_resource type="Script" uid="uid://bytw8qnrvkmu" path="res://gameplay/crowd_control/background.gd" id="2_dggiv"]
+[ext_resource type="SpriteFrames" uid="uid://q5k78reyjjej" path="res://gameplay/crowd_control/Assets/player.tres" id="7_x7ccy"]
+[ext_resource type="Script" uid="uid://n3aexvbpivg8" path="res://gameplay/crowd_control/Scenes/crowd_manager.gd" id="8_ca265"]
+[ext_resource type="Script" uid="uid://4u732b2ckfpv" path="res://gameplay/crowd_control/Scenes/crowd_control_music.gd" id="8_hxt7f"]
+[ext_resource type="PackedScene" uid="uid://xmrthddquduu" path="res://gameplay/crowd_control/Scenes/NPC.tscn" id="9_o0bn6"]
 
 [node name="CrowdControl" type="Node2D"]
 
-[node name="CrowdManager" parent="." instance=ExtResource("1_ljxgv")]
-position = Vector2(0, 0)
-num_rows = 5
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ake6")
+script = ExtResource("2_dggiv")
+
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("player_crowd_manager", "all_crowd_managers")]
+script = ExtResource("1_2ihi5")
+player_crowd_manager = NodePath("../CrowdContainer/FrontRow")
+all_crowd_managers = [NodePath("../CrowdContainer/FrontRow"), NodePath("../CrowdContainer/MiddleFrontRow"), NodePath("../CrowdContainer/MiddleRow"), NodePath("../CrowdContainer/MiddleBackRow"), NodePath("../CrowdContainer/BackRow"), NodePath("../CrowdContainer/UpperBackRow")]
+difficulty = 4
+success_window = 0.3
+
+[node name="CrowdContainer" type="Node2D" parent="."]
+
+[node name="UpperBackRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 260)
+script = ExtResource("8_ca265")
+spacing = 20.0
+row_spacing = 15.0
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.2
+left_section_size = 10
+left_gap = 16
+center_section_size = 0
+right_gap = 16
+right_section_size = 10
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="BackRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 285)
+script = ExtResource("8_ca265")
+spacing = 22.0
+row_spacing = 15.0
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.3
+left_section_size = 10
+left_gap = 1
+center_section_size = 25
+right_gap = 1
+right_section_size = 10
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleBackRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 320)
+script = ExtResource("8_ca265")
+spacing = 25.0
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.4
+left_section_size = 9
+center_section_size = 20
+right_section_size = 9
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 350)
+script = ExtResource("8_ca265")
+spacing = 30.0
+row_spacing = 40.0
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.6
+left_section_size = 7
+center_section_size = 16
+right_section_size = 7
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="MiddleFrontRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 395)
+script = ExtResource("8_ca265")
+spacing = 35.0
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 1.8
+left_gap = 4
+center_section_size = 13
+right_gap = 4
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="FrontRow" type="Node2D" parent="CrowdContainer"]
+position = Vector2(0, 435)
+script = ExtResource("8_ca265")
+spacing = 40.0
+row_spacing = 0.0
+player_index = 14
+npc_scene = ExtResource("9_o0bn6")
+npc_scale = 2.0
+player_sprite_frames = ExtResource("7_x7ccy")
+left_gap = 4
+center_section_size = 11
+right_gap = 4
+metadata/_custom_type_script = "uid://n3aexvbpivg8"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("8_hxt7f")
