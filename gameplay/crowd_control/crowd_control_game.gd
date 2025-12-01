@@ -64,11 +64,13 @@ func _ready():
 
 func create_ui():
 	"""Create in-game UI elements"""
-	# Status label (for wave notifications)
+	# Status label (for wave notifications) - centered horizontally
 	status_label = Label.new()
-	status_label.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	status_label.position = Vector2(0, 20)
-	status_label.size = Vector2(get_viewport().size.x, 100)
+	status_label.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	status_label.offset_left = -400  # Half of width to center
+	status_label.offset_top = 20
+	status_label.offset_right = 400  # Half of width
+	status_label.offset_bottom = 120
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	status_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
 	status_label.add_theme_font_size_override("font_size", 36)
